@@ -1,21 +1,22 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pavlov/version'
+require 'korsakov/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'pavlov'
-  gem.version       = Pavlov::VERSION
+  gem.name          = 'korsakov'
+  gem.version       = Korsakov::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.authors       = ['Mark IJbema', 'Tom de Vries', 'Jan Paul Posma', 'Remon Oldenbeuving', 'Jan Deelstra']
-  gem.email         = ['jan+pavlov@deelstra.org']
+  gem.authors       = ['Jan Deelstra']
+  gem.email         = ['jan+korsakov@deelstra.org']
   gem.summary       = %q{Infrastructure for defining your Ruby architecture.}
-  gem.description   = %q{Pavlov is a opinionated toolbox to help you architect your Ruby project.}
-  gem.homepage      = 'https://github.com/Factlink/pavlov/'
+  gem.description   = %q{Korsakov is a opinionated toolbox to help you architect your Ruby project that uses pavlov.}
+  gem.homepage      = 'https://github.com/jjoos/korsakov/'
   gem.files         = `git ls-files lib`.split($/)
-  gem.test_files    = gem.files.grep(%r{^(tests)/})
+  gem.test_files    = gem.files.grep(%r{^(spec)/})
   gem.require_paths = ['lib']
 
+  gem.add_dependency 'pavlov'
   rails_version = '>= 3.2.7'
   gem.add_dependency 'activesupport', rails_version
   gem.add_dependency 'activemodel', rails_version

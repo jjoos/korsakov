@@ -1,4 +1,4 @@
-module Pavlov
+module Korsakov
   module Errors
     class Immutable < StandardError
     end

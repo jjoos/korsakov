@@ -4,10 +4,10 @@ require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new
 
-desc "Run the benchmarks for pavlov."
+desc "Run the benchmarks for korsakov."
 task :benchmark do
-  ruby "benchmark/pavlov/entity.rb"
-  ruby "benchmark/pavlov/immutable_entity.rb"
+  ruby "benchmark/korsakov/entity.rb"
+  ruby "benchmark/korsakov/immutable_entity.rb"
 end
 
 desc "Look for TODO, FIXME and TBD tags in the code. (not case sensitive)"

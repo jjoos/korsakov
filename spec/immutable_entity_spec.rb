@@ -1,11 +1,11 @@
 require_relative 'spec_helper'
-require 'pavlov/immutable_entity'
+require 'korsakov/immutable_entity'
 
-describe Pavlov::ImmutableEntity do
+describe Korsakov::ImmutableEntity do
 
   describe '#update' do
     let('test_class') do
-      Class.new Pavlov::ImmutableEntity do
+      Class.new Korsakov::ImmutableEntity do
         attributes :name, :test
 
         private
@@ -26,11 +26,11 @@ describe Pavlov::ImmutableEntity do
 
   describe 'immutability' do
     before do
-      stub_const "Pavlov::Errors::Immutable", StandardError
+      stub_const "Korsakov::Errors::Immutable", StandardError
     end
 
     let('test_class') do
-      Class.new Pavlov::ImmutableEntity do
+      Class.new Korsakov::ImmutableEntity do
         attributes :name
       end
     end
@@ -62,7 +62,7 @@ describe Pavlov::ImmutableEntity do
 
       expect {
         described_class.new 
-      }.to raise_error(Pavlov::Errors::Immutable)
+      }.to raise_error(Korsakov::Errors::Immutable)
     end
 
     it 'calls validate after update and throws when validations is not succesfull' do
@@ -72,7 +72,7 @@ describe Pavlov::ImmutableEntity do
 
       expect {
         test_object = test_object.update
-      }.to raise_error(Pavlov::Errors::Immutable)
+      }.to raise_error(Korsakov::Errors::Immutable)
     end
   end
 end

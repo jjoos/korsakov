@@ -1,10 +1,10 @@
 require_relative '../spec_helper'
-require 'pavlov'
+require 'korsakov'
 
 describe ActiveModel::Validations::StringValidator do
   describe '#valid?' do
     let('test_class') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_string :id
       end
@@ -43,7 +43,7 @@ describe ActiveModel::Validations::StringValidator do
 
   describe '#errors' do
     let('test_class') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_string :id
       end
@@ -60,7 +60,7 @@ describe ActiveModel::Validations::StringValidator do
 
   describe '.validate_string' do
     let('test_class_with_multiple_arguments') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id, :parentid
         validate_string :id, :parentid
       end
@@ -78,7 +78,7 @@ describe ActiveModel::Validations::StringValidator do
     end
 
     let('test_class_with_array_arguments') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id, :parentid
         validate_string [:id, :parentid]
       end
@@ -96,7 +96,7 @@ describe ActiveModel::Validations::StringValidator do
     end
 
     let('test_class_with_allow_blank') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_string :id, allow_blank: true
       end
@@ -123,7 +123,7 @@ describe ActiveModel::Validations::StringValidator do
     end
 
     let('test_class_with_non_empty') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_string :id, non_empty: true
       end

@@ -1,7 +1,7 @@
 require 'active_model'
 require_relative 'helpers/safe_evaluator'
 
-module Pavlov
+module Korsakov
   class Entity
     include ActiveModel::Validations
 
@@ -63,7 +63,7 @@ module Pavlov
 
     def safely_evaluate_against &block
       caller_instance = eval "self", block.binding
-      evaluator = Pavlov::Helpers::SafeEvaluator.new(self, caller_instance)
+      evaluator = Korsakov::Helpers::SafeEvaluator.new(self, caller_instance)
       evaluator.instance_eval(&block)
     end
   end

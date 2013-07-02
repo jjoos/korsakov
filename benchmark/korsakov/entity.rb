@@ -1,9 +1,9 @@
 require 'benchmark/ips'
 require 'benchmark'
 
-require_relative '../../lib/pavlov/entity'
+require_relative '../../lib/korsakov/entity'
 
-class User < Pavlov::Entity
+class User < Korsakov::Entity
   attributes :username, :bla, :bla2, :bla3
 end
 

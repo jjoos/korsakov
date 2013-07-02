@@ -1,16 +1,16 @@
 require_relative '../spec_helper'
-require 'pavlov'
+require 'korsakov'
 
-describe Pavlov::Helpers::SafeEvaluator do
+describe Korsakov::Helpers::SafeEvaluator do
   it 'inititializes correctly' do
-    safe_evaluator = Pavlov::Helpers::SafeEvaluator.new mock, mock
+    safe_evaluator = Korsakov::Helpers::SafeEvaluator.new mock, mock
     
     expect(safe_evaluator).to_not be_nil
   end
 
   it 'pipes setter method calls to target_instance' do
     target_instance = mock
-    safe_evaluator = Pavlov::Helpers::SafeEvaluator.new target_instance, mock
+    safe_evaluator = Korsakov::Helpers::SafeEvaluator.new target_instance, mock
 
     target_instance.should_receive(:public_send)
       .with(:test=, true)
@@ -20,7 +20,7 @@ describe Pavlov::Helpers::SafeEvaluator do
 
   it 'pipes getter method calls to caller_instance' do
     caller_instance = mock
-    safe_evaluator = Pavlov::Helpers::SafeEvaluator.new mock, caller_instance
+    safe_evaluator = Korsakov::Helpers::SafeEvaluator.new mock, caller_instance
 
     caller_instance.should_receive(:send)
       .with(:test, true)

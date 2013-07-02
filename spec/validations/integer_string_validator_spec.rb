@@ -1,10 +1,10 @@
 require_relative '../spec_helper'
-require 'pavlov'
+require 'korsakov'
 
 describe ActiveModel::Validations::IntegerStringValidator do
   describe '#valid?' do
     let('test_class') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_integer_string :id
       end
@@ -37,7 +37,7 @@ describe ActiveModel::Validations::IntegerStringValidator do
 
   describe '#errors' do
     let('test_class') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_integer_string :id
       end
@@ -54,7 +54,7 @@ describe ActiveModel::Validations::IntegerStringValidator do
 
   describe '.validate_integer_string' do
     let('test_class_with_multiple_arguments') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id, :parentid
         validate_integer_string :id, :parentid
       end
@@ -72,7 +72,7 @@ describe ActiveModel::Validations::IntegerStringValidator do
     end
 
     let('test_class_with_array_arguments') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id, :parentid
         validate_integer_string [:id, :parentid]
       end
@@ -90,7 +90,7 @@ describe ActiveModel::Validations::IntegerStringValidator do
     end
 
     let('test_class_with_allow_blank') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :id
         validate_integer_string :id, allow_blank: true
       end

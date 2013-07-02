@@ -1,16 +1,16 @@
 require_relative 'spec_helper'
-require 'pavlov/entity'
+require 'korsakov/entity'
 
-describe Pavlov::Entity do
+describe Korsakov::Entity do
   let 'test_class' do
-    Class.new Pavlov::Entity do
+    Class.new Korsakov::Entity do
       attributes :name, :test
     end
   end
 
   describe '.new' do
     let 'test_class' do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :name, :test
 
         private
@@ -115,7 +115,7 @@ describe Pavlov::Entity do
 
   describe '.update' do
     let('test_class') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :name, :test
 
         private
@@ -180,7 +180,7 @@ describe Pavlov::Entity do
 
   describe 'default behaviour' do
     let('test_class') do
-      Class.new Pavlov::Entity
+      Class.new Korsakov::Entity
     end
 
     it 'must raise normally when calling a undefined method' do
@@ -196,13 +196,13 @@ describe Pavlov::Entity do
 
   describe '#valid?' do
     let('test_class_no_validations') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         attributes :name
       end
     end
 
     let('test_class_with_validations') do
-      Class.new Pavlov::Entity do
+      Class.new Korsakov::Entity do
         def self.name
           'TestClassWithValidations'
         end

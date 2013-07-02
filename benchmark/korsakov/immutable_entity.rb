@@ -1,9 +1,9 @@
 require 'benchmark/ips'
 require 'benchmark'
 
-require_relative '../../lib/pavlov/immutable_entity'
+require_relative '../../lib/korsakov/immutable_entity'
 
-class User < Pavlov::ImmutableEntity
+class User < Korsakov::ImmutableEntity
   attributes :username, :bla, :bla2, :bla3
 end
 

@@ -1,8 +1,8 @@
 require_relative 'entity'
 require_relative 'errors/immutable_error'
 
-module Pavlov
-  class ImmutableEntity < Pavlov::Entity
+module Korsakov
+  class ImmutableEntity < Korsakov::Entity
     def self.attributes *args
       @attributes ||= []
       args.each do |attribute_name|
@@ -22,7 +22,7 @@ module Pavlov
         copy_hash_values hash
         safely_evaluate_against(&block) if block_given?
       end
-      raise Pavlov::Errors::Immutable.new unless valid?
+      raise Korsakov::Errors::Immutable.new unless valid?
       self
     end
 

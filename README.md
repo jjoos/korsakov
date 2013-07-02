@@ -1,6 +1,6 @@
-# Pavlov [![Build Status](https://api.travis-ci.org/Factlink/pavlov.png)](http://travis-ci.org/Factlink/pavlov) [![Gem Version](https://badge.fury.io/rb/pavlov.png)](http://badge.fury.io/rb/pavlov) [![Dependency Status](https://gemnasium.com/Factlink/pavlov.png)](https://gemnasium.com/Factlink/pavlov) [![Code Climate](https://codeclimate.com/github/Factlink/pavlov.png)](https://codeclimate.com/github/Factlink/pavlov) [![Coverage Status](https://coveralls.io/repos/Factlink/pavlov/badge.png?branch=master)](https://coveralls.io/r/Factlink/pavlov)
+# Korsakov [![Build Status](https://api.travis-ci.org/jjoos/korsakov.png)](http://travis-ci.org/jjoos/korsakov) [![Gem Version](https://badge.fury.io/rb/korsakov.png)](http://badge.fury.io/rb/korsakov) [![Dependency Status](https://gemnasium.com/jjoos/korsakov.png)](https://gemnasium.com/jjoos/korsakov) [![Code Climate](https://codeclimate.com/github/jjoos/korsakov.png)](https://codeclimate.com/github/jjoos/korsakov) [![Coverage Status](https://coveralls.io/repos/jjoos/korsakov/badge.png?branch=master)](https://coveralls.io/r/jjoos/korsakov)
 
-Gem that provides infrastructure for ruby.
+Gem that provides entities for ruby..
 
 ### Use at your own risk, this is _EXTREMELY_ alpha and subject to changes without notice.
 
@@ -8,7 +8,7 @@ Gem that provides infrastructure for ruby.
 
 Add this line to your application's Gemfile:
 
-    gem 'pavlov'
+    gem 'korsakov'
 
 And then execute:
 
@@ -16,43 +16,18 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install pavlov
+    $ gem install korsakov
 
 
-## Commands, Queries and Interactors
-Inspiration:
-http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
-http://martinfowler.com/bliki/CQRS.html
-
-Frontend only calls interactors. Interactors call queries and commands.
-Queries never call commands, they can call queries.
-Commands can call commands and queries.
-But keep your design _simple_ (KISS).
-
-### Usage
+## Entities
 
 TODO
 
-### Authorization
-
-There are multiple facets to whether a user is authorized:
-
-1. Can this user execute this operation
-2. On which set of objects can this user execute this operation
-
-We decided that the best way to handle this is:
-
-The interactors check whether an operation is authorized before running the execution code, but not in the initialization. This is not implemented yet, but will mean an interactor has something like run which does authorize; execute.
-
-When a operation is executed on one object and this is not authorized, this is clearly an exceptional situation (in the sense that it shouldn't happen), and an exception is thrown.
-
-When a operation is executed on a set of objects, the operation will only execute on the subset the user is authorized for.
-
-## Immutable objects
+## Immutable entities
 These objects can be used to simplify your design by making sure your object is always valid.
 ### Usage
 ```ruby
-class User < Pavlov::Entity
+class User < Korsakov::Entity
   attributes :name, :username, :email
 end
 

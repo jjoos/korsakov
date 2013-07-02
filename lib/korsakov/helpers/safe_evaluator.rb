@@ -1,4 +1,4 @@
-module Pavlov
+module Korsakov
   module Helpers
     class SafeEvaluator < BasicObject
       def initialize target_instance, caller_instance

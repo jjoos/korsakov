@@ -1,6 +1,6 @@
 require_relative 'entity'
 
-module Pavlov
+module Korsakov
   module RailsModel
     module ClassMethods
       def _to_partial_path
