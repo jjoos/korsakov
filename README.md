@@ -31,7 +31,7 @@ class User < Korsakov::Entity
   attributes :name, :username, :email
 end
 
-my_entitiy = User.new do
+my_entity = User.new do
   self.name = 'jan'
   self.username = 'jjoos'
   self.email = 'jan@deelstra.org'
@@ -39,7 +39,7 @@ end
 
 or
 
-my_entitiy = User.new({name: 'jan', username: 'jjoos', email: 'jan@deelstra.org'})
+my_entity = User.new({name: 'jan', username: 'jjoos', email: 'jan@deelstra.org'})
 
 my_entity = my_entity.update({name: 'joop', email: 'joop@deelstra.org'})
 
